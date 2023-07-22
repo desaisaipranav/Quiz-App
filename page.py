@@ -18,7 +18,7 @@ def app():
     
     if session_state.quiz_data is None:
         
-        topic = topic_placeholder.text_input("topic")
+        topic = topic_placeholder.text_input("Enter topic on which you want quiz")
         
         if button.button("Generate"):
             try:
