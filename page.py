@@ -2,8 +2,7 @@ import streamlit as st
 from ai_components import create_ques_ans,report
 
 def app():
-    tab1= st.tabs(["Give a quick quiz!"])
-
+    
     st.title("Let's test your knowledge!")
     st.header("Attempt this multiple choice based quiz and test your knowledge in all levels of learning!")
 
