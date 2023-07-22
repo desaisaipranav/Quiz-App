@@ -44,7 +44,7 @@ def sort_objects(obj_list):
 
 def create_ques_ans( topic):
     
-    template =f"""Prepare 4 multiple choice questions on {{topic}}
+    template =f"""Prepare 5 multiple choice questions on {{topic}}
     covering all levels of blooms taxonomy. try to make the questions on true definitons and on numerical or application also  somewhat complicated
     generate a python list which contains 4 sublists . In each python sublist ,
     first element should be the question. Second , third and fourth elements should be the only 3 options , 
