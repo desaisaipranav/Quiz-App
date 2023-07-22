@@ -111,7 +111,7 @@ def report(list,score,total):
     st.plotly_chart(fig)
    
     template =f"""U are provided with a list of questions {{question}} and list of coreesponding answers{list[1]} marked .
-    Just give 2 lines on how much understanding the perosn has on the concept generally. """
+    Just give 2 lines on how much understanding I have on the concept generally. """
     prompt = PromptTemplate.from_template(template)
     gpt4_model = ChatOpenAI(model="gpt-4",temperature=0.8)
     quizzer = LLMChain(prompt = prompt, llm = gpt4_model)
