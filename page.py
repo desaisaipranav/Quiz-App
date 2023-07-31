@@ -3,8 +3,7 @@ from ai_components import create_ques_ans,report
 
 def app():
     
-    st.title("Let's test your knowledge!")
-    st.header("Attempt this multiple choice based quiz and test your knowledge in all levels of learning!")
+    st.title("Quiz Whiz: 5 Quick Questions to Test Your Knowledge!")
 
     session_state = st.session_state
     if "quiz_data" not in session_state:
@@ -22,9 +21,8 @@ def app():
         
         if button.button("Generate"):
             try:
-                    session_state.quiz_data = create_ques_ans( topic)
-                    
-                    topic_placeholder.empty()
+                with st.spinner(f"Generating Quiz "):  session_state.quiz_data = create_ques_ans(topic)
+                topic_placeholder.empty()
             except Exception as e :
                     st.error("Please enter some topic")
     if session_state.quiz_data:
@@ -46,6 +44,7 @@ def app():
                 choice = st.radio("", options_, key=i)
                 if choice:
                     ans.append(choice)
+                st.divider()
             if session_state.quiz_data:
                 submitted = st.form_submit_button("Submit")
             else:
