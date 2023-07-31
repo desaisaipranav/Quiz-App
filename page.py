@@ -59,9 +59,10 @@ def app():
                     if ans[i] != user_input:
                         question_placeholder.error(f" Wrong! , right answer is {answers[i]}")
                 st.success("Test Score - " + str(session_state.score))
-                st.success(f'{report([questions,ans],session_state.score,len(answers))}')
+                with st.spinner(f"Report will be in 3 seconds "):
+                    st.success(f'{report([questions,ans],session_state.score,len(answers))}')
         if session_state.quiz_data :
-            new_quiz = st.button("new quiz")
+            new_quiz = st.button("Ateempt another quiz ")
             if new_quiz:
                 session_state.quiz_data = None
                 session_state.score = 0
